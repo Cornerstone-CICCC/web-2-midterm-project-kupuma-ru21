@@ -1,5 +1,5 @@
 "use client";
-import { SettingsIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, SettingsIcon } from "@chakra-ui/icons";
 import {
   Flex,
   Menu,
@@ -8,6 +8,7 @@ import {
   MenuList,
   MenuItem,
   useColorMode,
+  Link,
 } from "@chakra-ui/react";
 
 export const Header = () => {
@@ -20,9 +21,22 @@ export const Header = () => {
       bgColor="gray"
       h="50px"
       alignItems="center"
-      justifyContent="right"
-      pr={4}
+      px={4}
+      justifyContent="space-between"
     >
+      <Menu>
+        <MenuButton as={Button}>
+          <HamburgerIcon />
+        </MenuButton>
+        <MenuList>
+          <MenuItem>
+            <Link href="/">Home</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link href="/about">About</Link>
+          </MenuItem>
+        </MenuList>
+      </Menu>
       <Menu>
         <MenuButton as={Button}>
           <SettingsIcon />
